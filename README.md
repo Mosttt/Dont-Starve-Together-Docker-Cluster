@@ -50,7 +50,7 @@ cd ./data
 docker-compose up
 ```
 
-## END
-
-- 如果有任何建议或者 Bug 可以提 issue ，或者可以邮箱联系`A@Thoxvi.com`
-- (｡･ω･｡)ﾉ♡
+## 参考资料
+https://github.com/Thoxvi/Dont-Starve-Together-Docker-Cluster  
+https://blog.csdn.net/szhiy/article/details/79996017
+https://blog.csdn.net/qq_35543890/article/details/81257937

@@ -6,7 +6,7 @@ import re
 
 service_format = '''
  {name}:
-    image: thoxvi/dont-starve-together-docker-cluster:latest
+    build: ../dockerfile-update
     ports:
       - "10999/udp"
       - "10998/udp"
@@ -92,11 +92,11 @@ for info in infos:
         ))
 
     docker_compose_yml = docker_compose_yml + \
-                         service_format.format(
-                             name=name,
-                             ini_path=path_data_name,
-                             mods_setup_path=path_data_name + "/dedicated_server_mods_setup.lua",
-                         )
+        service_format.format(
+            name=name,
+            ini_path=path_data_name,
+            mods_setup_path=path_data_name + "/dedicated_server_mods_setup.lua",
+        )
 
 with open(path_data + "/docker-compose.yml", 'w') as f:
     f.write(docker_compose_yml)
