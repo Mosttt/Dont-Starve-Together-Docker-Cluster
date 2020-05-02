@@ -42,7 +42,7 @@
 
 1. Clone 项目:`git clone --depth=1 https://github.com/LaiQE/Dont-Starve-Together-Docker-Cluster.git`
 2. 进入目录:`cd ./Dont-Starve-Together-Docker-Cluster`
-3. 根据模板修改 user-config.yaml 文件，提供一个测试 Token (每一行对应一个实例,# 号注释，如果不需要密码的话请留空对应位置)
+3. 根据模板修改 user-config.yaml 文件, 关于饥荒服务器的更多配置选项根据参考资料中的第一个博客。(我们目前仅支持user-config.yaml中有的这些配置选项，其他选项要手动修改)
 4. 执行生成脚本:`bash makedata.sh`
 5. 转到工作目录:`cd data`
 6. 启动容器:`docker-compose up`
