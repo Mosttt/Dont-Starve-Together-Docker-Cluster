@@ -52,5 +52,5 @@ docker-compose up
 
 ## 参考资料
 https://github.com/Thoxvi/Dont-Starve-Together-Docker-Cluster  
-https://blog.csdn.net/szhiy/article/details/79996017
+https://blog.csdn.net/szhiy/article/details/79996017  
 https://blog.csdn.net/qq_35543890/article/details/81257937

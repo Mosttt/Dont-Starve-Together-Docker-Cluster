@@ -1,0 +1,22 @@
+- token: pds-g^KU_SIyU7xC8^BefMQjkrZ8l/3SMeS3pIZPnh/R9qujwAt1cqXjuZoaQ=
+  # 游戏里搜到的房间名
+  room_name: cxk
+  # 进房间的密码
+  passwd: xxxx
+  # 房间描述
+  introduction: 鸡你太美
+  # 管理员ID
+  adminlist:
+      - "KU_xxxxx"
+  # 是否开启洞穴
+  caves: false
+  # 要开启的mod列表
+  mods:
+      # Restart #重生 #复活 #自杀 Y:公聊 U:私聊
+      - "462434129"
+      # Global Positions 小地图显示玩家位置 共享地图发现
+      - "378160973"
+  # 游戏模式，可选：survival，endless，wilderness
+  game_mode: survival
+  # 最大在线人数
+  max_players: 6
