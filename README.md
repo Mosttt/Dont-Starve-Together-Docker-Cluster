@@ -7,12 +7,14 @@
 - 使用可读性更好的yaml脚本作为配置文件，并且可以支持在一个配置脚本中修改更多的常用配置(具体支持修改的配置参考user-config.yaml的注释)
 - 使用docker的python环境来执行配置生成脚本，现在不需要本地的python环境了
 - 现在支持开启或者关闭洞穴，以便于在内存较小的服务器上运行
+- 现在可以在配置文件中一键配置需要的mod
 - 更新代码逻辑，便于进一步更新
 
 ## 尚不支持的内容
-- 现在还没有支持端口的自定义配置，导致无法在一台主机上开启多个饥荒服务器
+- 现在还没有支持端口的自定义配置，可能导致无法在一台主机上开启多个饥荒服务器(有待测试)
 - 现在还不支持一些不常见的配置，需要在生产data文件夹后手动修改配置文件
 - 现在还不支持洞穴和地面分开配置
+- 现在还不支持在暂停游戏时修改配置
 
 ## 运行状况
 
@@ -52,7 +54,7 @@
 ```shell
 git clone https://github.com/LaiQE/Dont-Starve-Together-Docker-Cluster.git
 cd ./Dont-Starve-Together-Docker-Cluster
-# 修改配置文件 makedata.sh
+# 修改配置文件 user-config.yaml
 bash makedata.sh
 cd ./data
 docker-compose up
@@ -61,4 +63,5 @@ docker-compose up
 ## 参考资料
 https://github.com/Thoxvi/Dont-Starve-Together-Docker-Cluster  
 https://blog.csdn.net/szhiy/article/details/79996017  
-https://blog.csdn.net/qq_35543890/article/details/81257937
+https://blog.csdn.net/qq_35543890/article/details/81257937  
+https://dontstarve.fandom.com/wiki/Guides/Don%E2%80%99t_Starve_Together_Dedicated_Servers#Mods

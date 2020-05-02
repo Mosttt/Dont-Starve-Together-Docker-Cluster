@@ -13,6 +13,7 @@ service_format = '''
     volumes:
       - "./{name}:/root/.klei/DoNotStarveTogether/Cluster_1"
       - "./{name}/dedicated_server_mods_setup.lua:/root/DST/mods/dedicated_server_mods_setup.lua"
+      - "./{name}/modsettings.lua:/root/DST/mods/modsettings.lua"
     container_name: {name}
     command: "{caves}"
 '''
@@ -72,10 +73,15 @@ for info in user_config:
             f.write(admin + '\n')
     with open(os.path.join(room_path, "cluster.ini"), 'w') as f:
         f.write(cluster_ini.format(**info))
+    # 开启mod一定要同时配置下面两个文件
     with open(os.path.join(room_path, "dedicated_server_mods_setup.lua"), 'a') as f:
         f.write('\n')
         for mod_id in info['mods']:
             f.write('ServerModSetup("{}")\n'.format(mod_id))
+    with open(os.path.join(room_path, "modsettings.lua"), 'a') as f:
+        f.write('\n')
+        for mod_id in info['mods']:
+            f.write('ForceEnableMod("workshop-{}")\n'.format(mod_id))
 
     service_config = service_format.format(name=info['room_name'],
                                            caves='caves' if info['caves'] else 'no-caves')
