@@ -3,7 +3,7 @@
 根据配置文件快速建立饥荒联机版 (DST)Docker 集群
 
 ## 更新说明
-原始仓库为https://github.com/Thoxvi/Dont-Starve-Together-Docker-Cluster，但是原作者不更新了，趁着五一放假改了一波源代码，在原版基础上新增或修改的内容有：
+原始仓库为[Thoxvi/Dont-Starve-Together-Docker-Cluster](https://github.com/Thoxvi/Dont-Starve-Together-Docker-Cluster)，但是原作者不更新了，趁着五一放假改了一波源代码，在原版基础上新增或修改的内容有：
 - 使用可读性更好的yaml脚本作为配置文件，并且可以支持在一个配置脚本中修改更多的常用配置(具体支持修改的配置参考user-config.yaml的注释)
 - 使用docker的python环境来执行配置生成脚本，现在不需要本地的python环境了
 - 现在支持开启或者关闭洞穴，以便于在内存较小的服务器上运行
