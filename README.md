@@ -2,6 +2,18 @@
 
 根据配置文件快速建立饥荒联机版 (DST)Docker 集群
 
+## 更新说明
+原始仓库为https://github.com/Thoxvi/Dont-Starve-Together-Docker-Cluster，但是原作者不更新了，趁着五一放假改了一波源代码，在原版基础上新增或修改的内容有：
+- 使用可读性更好的yaml脚本作为配置文件，并且可以支持在一个配置脚本中修改更多的常用配置(具体支持修改的配置参考user-config.yaml的注释)
+- 使用docker的python环境来执行配置生成脚本，现在不需要本地的python环境了
+- 现在支持开启或者关闭洞穴，以便于在内存较小的服务器上运行
+- 更新代码逻辑，便于进一步更新
+
+## 尚不支持的内容
+- 现在还没有支持端口的自定义配置，导致无法在一台主机上开启多个饥荒服务器
+- 现在还不支持一些不常见的配置，需要在生产data文件夹后手动修改配置文件
+- 现在还不支持洞穴和地面分开配置
+
 ## 运行状况
 
 - 镜像大约 `580m`，包括底层 Ubuntu 镜像的话大约 `1G`
@@ -11,14 +23,9 @@
 
 ## 运行环境配置
 
-### 不推荐使用 Windows
-
-如果需要使用，则需要手动修改 Python 脚本文件中的对应 `mkdir cp` 等命令——因为这里是直接使用 `system(shell)` 脚本实现的。
-
 ### Python3 环境配置
-
-1. 在 [Python官网](https://www.python.org/downloads/)下载对应自己操作系统的安装包
-2. 然后安装环境，再配置环境变量(如果没有自动配置的话)
+现在不需要python环境了,直接使用python的docker镜像作为配置脚本的运行环境。  
+运行makedata.sh脚本会自动拉取python镜像。
 
 ### Docker环境配置
 
@@ -31,10 +38,10 @@
 
 ### 步骤介绍
 
-1. Clone 项目:`git clone https://github.com/Thoxvi/Dont-Starve-Together-Docker-Cluster.git`
+1. Clone 项目:`git clone --depth=1 https://github.com/LaiQE/Dont-Starve-Together-Docker-Cluster.git`
 2. 进入目录:`cd ./Dont-Starve-Together-Docker-Cluster`
-3. 根据模板修改 infos 文件，提供一个测试 Token (每一行对应一个实例,# 号注释，如果不需要密码的话请留空对应位置)
-4. 执行生成脚本:`python3 makedata.py`
+3. 根据模板修改 user-config.yaml 文件，提供一个测试 Token (每一行对应一个实例,# 号注释，如果不需要密码的话请留空对应位置)
+4. 执行生成脚本:`bash makedata.sh`
 5. 转到工作目录:`cd data`
 6. 启动容器:`docker-compose up`
 7. 若不想查看 Log 的话，可以在`启动容器`步骤使用:`docker-compose up -d`
@@ -43,9 +50,10 @@
 ### 一套带走
 
 ```shell
-git clone https://github.com/Thoxvi/Dont-Starve-Together-Docker-Cluster.git
+git clone https://github.com/LaiQE/Dont-Starve-Together-Docker-Cluster.git
 cd ./Dont-Starve-Together-Docker-Cluster
-python3 makedata.py
+# 修改配置文件 makedata.sh
+bash makedata.sh
 cd ./data
 docker-compose up
 ```
