@@ -56,13 +56,15 @@ with open('user-config.yaml', 'r') as f:
 path = os.path.dirname(os.path.abspath(__file__))
 path_data = os.path.join(path, "data")
 
+if os.path.exists(path_data):
+    shutil.rmtree(path_data)
 os.makedirs(path_data)
 
 docker_compose_yml = version_format
 # TODO:没有关于端口号的设置,还不支持同时开启多个服务
 for info in user_config:
     room_path = os.path.join(path_data, info['room_name'])
-    shutil.copy(os.path.join(path, 'template'), room_path)
+    shutil.copytree(os.path.join(path, 'template'), room_path)
     with open(os.path.join(room_path, "cluster_token.txt"), 'w') as f:
         f.write(info['token'])
     with open(os.path.join(room_path, "adminlist.txt"), 'a') as f:
@@ -82,3 +84,8 @@ for info in user_config:
 
 with open(path_data + "/docker-compose.yml", 'w') as f:
     f.write(docker_compose_yml)
+
+print("数据生成完毕！")
+print("在data文件夹中执行\033[1;33m docker-compose up -d \033[0m开启服务器")
+print("更多设置在data文件中修改配置文件")
+print("Enjoying Do-Not-Starve-Together now!!!!!")
