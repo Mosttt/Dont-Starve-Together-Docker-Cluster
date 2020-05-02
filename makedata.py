@@ -51,7 +51,7 @@ cluster_key = supersecretkey
 '''
 
 with open('user-config.yaml', 'r') as f:
-    user_config = yaml.load(f)
+    user_config = yaml.load(f, Loader=yaml.FullLoader)
 
 path = os.path.dirname(os.path.abspath(__file__))
 path_data = os.path.join(path, "data")
