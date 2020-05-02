@@ -1,3 +1,4 @@
+#!/bin/bash
 /root/steamcmd/steamcmd.sh +@ShutdownOnFailedCommand 1 +@NoPromptForPassword 1 +login anonymous +force_install_dir /root/DST +app_update 343050 +quit
 /root/DST/bin/dontstarve_dedicated_server_nullrenderer -only_update_server_mods
 # 是否开启洞穴,默认不开启洞穴
