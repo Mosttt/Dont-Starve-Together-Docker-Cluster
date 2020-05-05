@@ -77,3 +77,4 @@ https://github.com/Thoxvi/Dont-Starve-Together-Docker-Cluster
 https://blog.csdn.net/szhiy/article/details/79996017  
 https://blog.csdn.net/qq_35543890/article/details/81257937  
 https://dontstarve.fandom.com/wiki/Guides/Don%E2%80%99t_Starve_Together_Dedicated_Servers#Mods
+https://blog.csdn.net/weixin_45050258/article/details/90378120
