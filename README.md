@@ -8,6 +8,7 @@
 - 使用docker的python环境来执行配置生成脚本，现在不需要本地的python环境了
 - 现在支持开启或者关闭洞穴，以便于在内存较小的服务器上运行
 - 现在可以在配置文件中一键配置需要的mod
+- 现在可以在玩到一半时增加mod,并保留原有存档
 - 更新代码逻辑，便于进一步更新
 
 ## 尚不支持的内容
@@ -59,6 +60,17 @@ bash makedata.sh
 cd ./data
 docker-compose up
 ```
+
+### 增加mod
+1. 停止现有服务器，在data目录下运行 `docker-compose down`
+2. 在项目目录下运行增加mod的脚本 add_mod.sh
+```shell
+cd ..
+bash add_mod.sh 462434129 378160973 # 这里后面的数字是你要开启的mod, 个数不限
+```
+3. 重新开启服务，在data目录下运行 `docker-compose up -d`
+
+
 
 ## 参考资料
 https://github.com/Thoxvi/Dont-Starve-Together-Docker-Cluster  

@@ -55,6 +55,7 @@ with open('user-config.yaml', 'r') as f:
     user_config = yaml.load(f, Loader=yaml.FullLoader)
 
 path = os.path.dirname(os.path.abspath(__file__))
+path = os.path.abspath(os.path.join(path, '..'))
 path_data = os.path.join(path, "data")
 
 if os.path.exists(path_data):
