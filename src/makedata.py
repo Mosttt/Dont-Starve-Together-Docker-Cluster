@@ -8,8 +8,8 @@ service_format = '''
  {name}:
     build: ../dockerfile-update
     ports:
-      - "10999/udp"
-      - "10998/udp"
+      - "10999/udp:10999/udp"
+      - "10998/udp:10998/udp"
     volumes:
       - "./{name}:/root/.klei/DoNotStarveTogether/Cluster_1"
       - "./{name}/dedicated_server_mods_setup.lua:/root/DST/mods/dedicated_server_mods_setup.lua"
