@@ -41,7 +41,7 @@
 
 ### 步骤介绍
 
-1. Clone 项目:`git clone --depth=1 https://github.com/LaiQE/Dont-Starve-Together-Docker-Cluster.git`
+1. Clone 项目:`git clone --depth=1 https://github.com/Mosttt/Dont-Starve-Together-Docker-Cluster.git`
 2. 进入目录:`cd ./Dont-Starve-Together-Docker-Cluster`
 3. 根据模板修改 user-config.yaml 文件, 关于饥荒服务器的更多配置选项根据参考资料中的第一个博客。(我们目前仅支持user-config.yaml中有的这些配置选项，其他选项要手动修改)
 4. 执行生成脚本:`bash makedata.sh`
@@ -53,7 +53,7 @@
 ### 一套带走
 
 ```shell
-git clone https://github.com/LaiQE/Dont-Starve-Together-Docker-Cluster.git
+git clone https://github.com/Mosttt/Dont-Starve-Together-Docker-Cluster.git
 cd ./Dont-Starve-Together-Docker-Cluster
 # 修改配置文件 user-config.yaml
 bash makedata.sh
